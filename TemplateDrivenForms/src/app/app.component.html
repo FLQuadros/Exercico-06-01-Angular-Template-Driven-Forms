@@ -1,0 +1,121 @@
+<main>
+  <mat-card class="card">
+    <mat-card-title class="h1">Preencha seus dados e cadastre-se!</mat-card-title>
+  
+  <mat-card-content>
+    <form action="#" class="form" (ngSubmit)="submit()" #form="ngForm">
+      <div class="div1">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Nome</mat-label>
+          <input type="text" matInput placeholder="Digite seu nome" autocomplete="off" [(ngModel)]="name" name="name" required minlength="3" #inputName="ngModel">
+          <mat-error *ngIf="inputName.invalid">
+            <span *ngIf="inputName.errors?.['required']">Este campo é obrigatório.</span>
+            <span *ngIf="inputName.errors?.['minlength']">Mínimo de 3 caracteres.</span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Sobrenome</mat-label>
+          <input type="text" matInput placeholder="Digite seu sobrenome" autocomplete="off" [(ngModel)]="lastName" name="lastName" required minlength="3" #inputLastName="ngModel">
+          <mat-error *ngIf="inputLastName.invalid">
+            <span *ngIf="inputLastName.errors?.['required']">Este campo é obrigatório.</span>
+            <span *ngIf="inputLastName.errors?.['minlength']">Mínimo de 3 caracteres.</span>
+          </mat-error>
+        </mat-form-field>
+
+      </div>
+
+      <div class="div1">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input type="text" matInput placeholder="Digite seu nome de usuário" autocomplete="off" [(ngModel)]="userName" name="userName" required minlength="3" #inputUserName="ngModel">
+          <mat-error *ngIf="inputUserName.invalid">
+            <span *ngIf="inputUserName.errors?.['required']">Este campo é obrigatório.</span>
+            <span *ngIf="inputUserName.errors?.['minlength']">Mínimo de 3 caracteres.</span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>CPF</mat-label>
+          <input type="text" matInput placeholder="Digite seu CPF" autocomplete="off"[(ngModel)]="cpf" name="cpf" required minlength="11" #inputCpf="ngModel">
+          <mat-error *ngIf="inputCpf.invalid">
+            <span *ngIf="inputCpf.errors?.['required']">Este campo é obrigatório.</span>
+            <span *ngIf="inputCpf.errors?.['minlength']">Mínimo de 11 caracteres.</span>
+          </mat-error>
+        </mat-form-field>
+
+      </div>
+
+      <mat-form-field class="" appearance="outline">
+        <mat-label>Endereço</mat-label>
+        <input type="text" matInput placeholder="Digite seu endereço" autocomplete="off" [(ngModel)]="endereco" name="endereco" required minlength="10" #inputEndereco="ngModel">
+        <mat-error *ngIf="inputEndereco.invalid">
+          <span *ngIf="inputEndereco.errors?.['required']">Este campo é obrigatório.</span>
+          <span *ngIf="inputEndereco.errors?.['minlength']">Mínimo de 10 caracteres.</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="" appearance="outline">
+        <mat-label>Complemento</mat-label>
+        <input type="text" matInput autocomplete="off" [(ngModel)]="complemento" name="complemento" required minlength="10" #inputComplemento="ngModel">
+        <mat-error *ngIf="inputComplemento.invalid">
+          <span *ngIf="inputComplemento.errors?.['required']">Este campo é obrigatório.</span>
+          <span *ngIf="inputComplemento.errors?.['minlength']">Mínimo de 10 caracteres.</span>
+        </mat-error>
+      </mat-form-field>
+
+      <div class="div1">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Telefone Celular</mat-label>
+          <input type="tel" matInput placeholder="Digite com o DDD" autocomplete="off" [(ngModel)]="telCellphone" name="telCellphone" required minlength="11" #inputTelCell="ngModel">
+          <mat-error *ngIf="inputTelCell.invalid">
+            <span *ngIf="inputTelCell.errors?.['required']">Este campo é obrigatório.</span>
+            <span *ngIf="inputTelCell.errors?.['minlength']">Mínimo de 11 caracteres.</span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Telefone Residencial</mat-label>
+          <input type="tel" matInput placeholder="Digite com o DDD" autocomplete="off" [(ngModel)]="telResidence" name="telResidence" minlength="10" #inputTelResidence="ngModel">
+          <mat-error *ngIf="inputTelResidence.invalid">
+            <span *ngIf="inputTelResidence.errors?.['minlength']">Mínimo de 10 caracteres.</span>
+          </mat-error>
+        </mat-form-field>
+
+      </div>
+
+      <div class="div1">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Senha</mat-label>
+          <input type="password" matInput placeholder="Digite uma senha" autocomplete="off" [(ngModel)]="password" name="password" required minlength="8" maxlength="8" #inputPass="ngModel">
+          <mat-error *ngIf="inputPass.invalid">
+            <span *ngIf="inputPass.errors?.['required']">Este campo é obrigatório.</span>
+            <span *ngIf="inputPass.errors?.['minlength']">A senha deve ter 8 caracteres.</span>
+            <span *ngIf="inputPass.value != inputConfirmPass.value">Senhas diferentes.</span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Confirmação de Senha</mat-label>
+          <input type="password" matInput placeholder="Confirme sua senha" autocomplete="off" [(ngModel)]="confirmPassword" name="confirmPassword" required minlength="8" maxlength="8" #inputConfirmPass="ngModel">
+          <mat-error *ngIf="inputConfirmPass.invalid">
+            <span *ngIf="inputConfirmPass.errors?.['required']">Este campo é obrigatório.</span>
+            <span *ngIf="inputConfirmPass.errors?.['minlength']">A senha deve ter 8 caracteres.</span>
+            <span *ngIf="inputPass.value != inputConfirmPass.value">Senhas diferentes.</span>
+          </mat-error>
+        
+        </mat-form-field>
+
+      </div>
+
+      <button type="submit" (click)="showDialog()" mat-raised-button color="primary" [disabled]="inputName.invalid || inputLastName.invalid || inputUserName.invalid || inputCpf.invalid || inputEndereco.invalid || inputComplemento.invalid || inputTelCell.invalid || inputTelResidence.invalid || inputPass.invalid || inputConfirmPass.invalid || inputPass.value != inputConfirmPass.value">Enviar</button>
+
+    </form>
+
+  </mat-card-content>
+</mat-card>
+</main>
