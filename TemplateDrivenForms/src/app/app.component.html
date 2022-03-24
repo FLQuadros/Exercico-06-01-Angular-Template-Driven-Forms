@@ -91,23 +91,22 @@
 
         <mat-form-field appearance="outline">
           <mat-label>Senha</mat-label>
-          <input type="password" matInput placeholder="Digite uma senha" autocomplete="off" [(ngModel)]="password" name="password" required minlength="8" maxlength="8" #inputPass="ngModel">
+          <input type="password" matInput placeholder="Digite uma senha" autocomplete="off" [(ngModel)]="password" name="password" required minlength="8"  #inputPass="ngModel">
           <mat-error *ngIf="inputPass.invalid">
             <span *ngIf="inputPass.errors?.['required']">Este campo é obrigatório.</span>
             <span *ngIf="inputPass.errors?.['minlength']">A senha deve ter 8 caracteres.</span>
-            <span *ngIf="inputPass.value != inputConfirmPass.value">Senhas diferentes.</span>
           </mat-error>
+          <span *ngIf="inputPass.value != inputConfirmPass.value">Senhas diferentes.</span>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Confirmação de Senha</mat-label>
-          <input type="password" matInput placeholder="Confirme sua senha" autocomplete="off" [(ngModel)]="confirmPassword" name="confirmPassword" required minlength="8" maxlength="8" #inputConfirmPass="ngModel">
+          <input type="password" matInput placeholder="Confirme sua senha" autocomplete="off" [(ngModel)]="confirmPassword" name="confirmPassword" required minlength="8"  #inputConfirmPass="ngModel">
           <mat-error *ngIf="inputConfirmPass.invalid">
             <span *ngIf="inputConfirmPass.errors?.['required']">Este campo é obrigatório.</span>
             <span *ngIf="inputConfirmPass.errors?.['minlength']">A senha deve ter 8 caracteres.</span>
-            <span *ngIf="inputPass.value != inputConfirmPass.value">Senhas diferentes.</span>
           </mat-error>
-        
+          <span *ngIf="inputPass.value != inputConfirmPass.value">Senhas diferentes.</span>
         </mat-form-field>
 
       </div>
